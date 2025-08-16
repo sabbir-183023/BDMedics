@@ -1,0 +1,501 @@
+.single-subscriptions-main-container {
+  width: 100%;
+  display: flex;
+  margin: 30px 0;
+  .single-subscriptions-container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    .menu-side {
+      width: 20%;
+    }
+    .content-side {
+      width: 79%;
+      margin-left: 1%;
+      background: white;
+      border-radius: 10px;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      padding: 30px;
+      min-height: 320px;
+      h2 {
+        margin-top: 20px;
+        font-size: 28px;
+        text-align: center;
+      }
+      .back-button {
+        span {
+          cursor: pointer;
+        }
+      }
+      // Add these styles to your existing SCSS file
+      .details-holder {
+        position: relative;
+        overflow: hidden;
+        background: white;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        .contents-details {
+          margin: auto;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+          display: flex;
+          flex-direction: column;
+          width: 500px;
+          padding: 25px;
+          img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #f8f9fa;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            margin: auto;
+          }
+          p {
+            margin: 5px 0;
+            font-size: 1rem;
+            color: #2d3748;
+            label {
+              font-weight: 700;
+            }
+          }
+        }
+        .subscription-details-and-action {
+          background: white;
+          border-radius: 12px;
+
+          padding: 2rem;
+          margin: 2rem 0;
+          transition: all 0.3s ease;
+
+          h2 {
+            color: #2c3e50;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid #f0f7ff;
+            text-align: center;
+          }
+
+          table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 0.8rem;
+
+            tr {
+              display: flex;
+              &:last-child {
+                td {
+                  border-bottom: none;
+                  padding-top: 5px;
+                }
+              }
+            }
+            .activation-functionality {
+              display: flex;
+              .subscription-edit {
+                margin: auto;
+                .duration-controls {
+                  display: flex;
+                  gap: 10px;
+                  margin-bottom: 15px;
+
+                  input {
+                    width: 60px;
+                    padding: 8px;
+                    border: 1px solid #ddd;
+                    border-radius: 4px;
+                  }
+
+                  select {
+                    padding: 8px;
+                    border: 1px solid #ddd;
+                    border-radius: 4px;
+                  }
+                }
+
+                .action-buttons {
+                  display: flex;
+                  gap: 10px;
+
+                  button {
+                    padding: 8px 16px;
+                    border: none;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    transition: background 0.3s;
+
+                    &:first-child {
+                      background: #4caf50;
+                      color: white;
+
+                      &:hover {
+                        background: #388e3c;
+                      }
+                    }
+
+                    &.cancel-btn {
+                      background: #f44336;
+                      color: white;
+
+                      &:hover {
+                        background: #d32f2f;
+                      }
+                    }
+                  }
+                }
+              }
+              .subscription-inactive {
+                margin: auto;
+                .activate-btn {
+                  background: #4caf50;
+                  color: white;
+                  border: none;
+                  padding: 8px 16px;
+                  border-radius: 4px;
+                  cursor: pointer;
+                  transition: background 0.3s;
+
+                  &:hover {
+                    background: #388e3c;
+                  }
+                }
+              }
+              .subscription-active {
+                margin: auto;
+                .edit-btn {
+                  background: #2196f3;
+                  color: white;
+                  border: none;
+                  padding: 8px 16px;
+                  border-radius: 4px;
+                  cursor: pointer;
+                  display: flex;
+                  align-items: center;
+                  gap: 5px;
+                  margin-top: 10px;
+                  transition: background 0.3s;
+
+                  &:hover {
+                    background: #1976d2;
+                  }
+                }
+              }
+
+              .activate-btn {
+                margin: auto;
+                background: #4caf50;
+                color: white;
+                border: none;
+                padding: 8px 16px;
+                border-radius: 4px;
+                cursor: pointer;
+                transition: background 0.3s;
+
+                &:hover {
+                  background: #388e3c;
+                }
+              }
+            }
+            /* Status indicators */
+            .active-state {
+              color: white;
+              font-weight: 600;
+              background: #38a169;
+              border-radius: 5px;
+              padding: 0 8px;
+              display: flex;
+            }
+
+            .inactive-state {
+              color: white;
+              font-weight: 600;
+              background: #e53e3e;
+              border-radius: 5px;
+              padding: 0 8px;
+              display: flex;
+            }
+            td {
+              vertical-align: middle;
+              border-bottom: 1px solid #f5f7fa;
+              margin: 5px 0;
+
+              &:first-child {
+                font-weight: 600;
+                width: 40%;
+              }
+
+              &:nth-child(2) {
+                font-weight: 500;
+              }
+            }
+          }
+          /* Payment status colors */
+          .paid {
+            background-color: #38a169;
+            color: white;
+            border-radius: 5px;
+            padding: 0 8px;
+            display: flex;
+          }
+          .pending-confirmation {
+            background-color: #d69e2e;
+            color: black;
+            border-radius: 5px;
+            padding: 0 8px;
+            display: flex;
+          }
+          .unpaid {
+            color: white;
+            background-color: #e53e3e;
+            border-radius: 5px;
+            padding: 0 8px;
+            display: flex;
+          }
+        }
+        .last-five-transactions {
+          padding: 0 100px;
+          width: calc(100% - 200px);
+          h2 {
+            text-align: center;
+            border-bottom: 1px solid #1976d21d;
+          }
+          // Table styling
+          .payment-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-radius: 10px;
+            overflow: hidden;
+
+            thead {
+              tr {
+                padding: 10px 0;
+              }
+            }
+
+            tbody {
+              tr {
+                transition: all 0.3s ease;
+
+                &:hover {
+                  background-color: #f9f9f9;
+                  transform: translateY(-1px);
+                  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+                }
+
+                td {
+                  padding: 16px 20px;
+                  text-align: left;
+                  border-bottom: 1px solid #f0f0f0;
+                  color: #444;
+
+                  &:first-child {
+                    font-weight: 600;
+                    color: #2c3e50;
+                  }
+
+                  &:nth-child(3) {
+                    color: #27ae60;
+                    font-weight: 600;
+                  }
+                  .status-pending {
+                    color: white;
+                    background: #f39c12;
+                    padding: 4px 10px;
+                    border-radius: 8px;
+                  }
+                  .status-accepted {
+                    color: white;
+                    background: #27ae60;
+                    padding: 4px 10px;
+                    border-radius: 8px;
+                  }
+                  .status-rejected {
+                    color: white;
+                    background: red;
+                    padding: 4px 10px;
+                    border-radius: 8px;
+                  }
+                }
+              }
+            }
+
+            // Button styling
+            .btn-reject,
+            .btn-accept {
+              padding: 8px 16px;
+              border: none;
+              border-radius: 6px;
+              font-weight: 500;
+              cursor: pointer;
+              transition: all 0.2s ease;
+              margin-right: 8px;
+              font-size: 14px;
+            }
+
+            .update-buttons {
+              display: flex;
+              .btn-reject {
+                margin: auto;
+                background-color: #ffecec;
+                color: #e74c3c;
+
+                &:hover {
+                  background-color: #fadbd8;
+                  transform: translateY(-1px);
+                }
+
+                &:active {
+                  transform: translateY(0);
+                }
+              }
+
+              .btn-accept {
+                margin: auto;
+                background-color: #e8f8f0;
+                color: #27ae60;
+
+                &:hover {
+                  background-color: #d1f2eb;
+                  transform: translateY(-1px);
+                }
+
+                &:active {
+                  transform: translateY(0);
+                }
+              }
+            }
+            .verified-by {
+              font-size: 10px;
+              color: grey;
+              font-style: italic;
+            }
+          }
+          .load-more-container {
+            text-align: center;
+            margin-top: 1rem;
+
+            .load-more-btn {
+              background: #3498db;
+              color: white;
+              border: none;
+              padding: 8px 20px;
+              border-radius: 5px;
+              cursor: pointer;
+              transition: background-color 0.2s;
+
+              &:hover {
+                background: #2980b9;
+              }
+
+              &:disabled {
+                background: #bdc3c7;
+                cursor: not-allowed;
+              }
+            }
+          }
+        }
+
+        /* Loading state styles */
+        .skeleton-loader {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+        }
+
+        .skeleton-avatar {
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;
+          background: linear-gradient(
+            90deg,
+            #f0f2f5 25%,
+            #e6e9ed 50%,
+            #f0f2f5 75%
+          );
+          background-size: 200% 100%;
+          animation: shimmer 1.5s infinite linear;
+          margin-bottom: 20px;
+        }
+
+        .skeleton-line-container {
+          width: 100%;
+          max-width: 400px;
+        }
+
+        .skeleton-label {
+          width: 80px;
+          height: 16px;
+          background: #f0f2f5;
+          border-radius: 4px;
+          margin-top: 16px;
+          animation: fadeInOut 2s infinite ease-in-out;
+        }
+
+        .skeleton-line {
+          height: 20px;
+          width: 100%;
+          background: linear-gradient(
+            90deg,
+            #f0f2f5 25%,
+            #e6e9ed 50%,
+            #f0f2f5 75%
+          );
+          background-size: 200% 100%;
+          border-radius: 4px;
+          margin-top: 8px;
+          animation: shimmer 1.5s infinite linear;
+
+          &.medium {
+            width: 70%;
+          }
+
+          &.short {
+            width: 50%;
+          }
+
+          &.long {
+            width: 90%;
+          }
+        }
+
+        @keyframes shimmer {
+          0% {
+            background-position: 200% 0;
+          }
+          100% {
+            background-position: -200% 0;
+          }
+        }
+
+        @keyframes fadeInOut {
+          0%,
+          100% {
+            opacity: 0.6;
+          }
+          50% {
+            opacity: 1;
+          }
+        }
+      }
+
+      @keyframes shimmer {
+        0% {
+          background-position: -200% 0;
+        }
+        100% {
+          background-position: 200% 0;
+        }
+      }
+    }
+  }
+}

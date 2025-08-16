@@ -1,0 +1,229 @@
+.doctortransactions-main-container {
+  width: 100%;
+  display: flex;
+  height: 100%;
+  margin-top: 30px;
+  .doctortransactions-container {
+    height: 100%;
+    width: 90%;
+    margin: auto;
+    background: white;
+    display: flex;
+    @media (max-width: "768px") {
+      width: 100%;
+      display: block;
+    }
+    .menu-side {
+      width: 20%;
+    }
+    .content-side {
+      width: 79%;
+      margin-left: 1%;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      background-color: white;
+      min-height: 500px;
+      @media (max-width: "768px") {
+        width: 100%;
+        margin-left: 0%;
+        margin-top: -70px;
+        h2 {
+          text-align: center;
+        }
+      }
+      h2 {
+        text-align: center;
+      }
+      .transaction-table-container {
+        width: calc(100% - 40px);
+        margin: 20px;
+        @media (max-width: "768px") {
+          overflow-x: auto;
+          width: calc(100% - 10px);
+          margin: 5px;
+          -webkit-overflow-scrolling: touch;
+        }
+        table {
+          width: 100%;
+          border-collapse: separate;
+          border-spacing: 0;
+          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+          border-radius: 10px;
+          overflow: hidden;
+
+          thead {
+            background-color: #d9d9d9;
+            tr {
+              th {
+                padding: 10px 0;
+                text-align: center;
+              }
+            }
+          }
+
+          tbody {
+            .shimmer-row {
+              td {
+                padding: 16px 20px !important;
+                height: 20px;
+                position: relative;
+                overflow: hidden;
+
+                .shimmer {
+                  width: 100%;
+                  height: 20px;
+                  background: #f0f0f0;
+                  border-radius: 4px;
+                  position: relative;
+                  overflow: hidden;
+
+                  &::after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(
+                      90deg,
+                      transparent,
+                      rgba(255, 255, 255, 0.6),
+                      transparent
+                    );
+                    animation: shimmer 1.5s infinite;
+                  }
+                }
+              }
+            }
+
+            @keyframes shimmer {
+              0% {
+                transform: translateX(-100%);
+              }
+              100% {
+                transform: translateX(100%);
+              }
+            }
+            tr {
+              transition: all 0.3s ease;
+
+              &:hover {
+                background-color: #f9f9f9;
+                transform: translateY(-1px);
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+              }
+
+              td {
+                padding: 16px 20px;
+                text-align: center;
+                border-bottom: 1px solid #f0f0f0;
+                color: #444;
+
+                &:first-child {
+                  font-weight: 600;
+                  color: #2c3e50;
+                }
+
+                &:nth-child(3) {
+                  color: #27ae60;
+                  font-weight: 600;
+                }
+                .status-pending {
+                  color: white;
+                  background: #f39c12;
+                  padding: 4px 10px;
+                  border-radius: 8px;
+                }
+                .status-accepted {
+                  color: white;
+                  background: #27ae60;
+                  padding: 4px 10px;
+                  border-radius: 8px;
+                }
+                .status-rejected {
+                  color: white;
+                  background: red;
+                  padding: 4px 10px;
+                  border-radius: 8px;
+                }
+              }
+            }
+          }
+
+          // Button styling
+          .btn-reject,
+          .btn-accept {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-right: 8px;
+            font-size: 14px;
+          }
+
+          .update-buttons {
+            display: flex;
+            .btn-reject {
+              margin: auto;
+              background-color: #ffecec;
+              color: #e74c3c;
+
+              &:hover {
+                background-color: #fadbd8;
+                transform: translateY(-1px);
+              }
+
+              &:active {
+                transform: translateY(0);
+              }
+            }
+
+            .btn-accept {
+              margin: auto;
+              background-color: #e8f8f0;
+              color: #27ae60;
+
+              &:hover {
+                background-color: #d1f2eb;
+                transform: translateY(-1px);
+              }
+
+              &:active {
+                transform: translateY(0);
+              }
+            }
+          }
+        }
+        .empty {
+          text-align: center;
+          color: rgb(207, 207, 207);
+        }
+        .load-more-container {
+          text-align: center;
+          margin-top: 1rem;
+
+          .load-more-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+
+            &:hover {
+              background: #2980b9;
+            }
+
+            &:disabled {
+              background: #bdc3c7;
+              cursor: not-allowed;
+            }
+          }
+        }
+      }
+    }
+  }
+}

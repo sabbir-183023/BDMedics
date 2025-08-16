@@ -1,0 +1,9 @@
+.layout-container {
+  .children {
+    padding-top: 100px;
+    min-height: calc(100vh - 100px - 500px);
+    @media(max-width: 768px){
+      padding-top: 89px;
+    }
+  }
+}

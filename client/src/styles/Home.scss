@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Molle&display=swap");
+
+.banner-div {
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 1000px;
+  margin-top: -35px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative; // For absolute positioning of button
+  transition: background-image 0.5s ease-in-out; // Smooth background transition
+   @media (max-width: "768px") {
+    height: 700px;
+  }
+  h1 {
+    margin: -300px 0 0 90px;
+    color: white;
+    font-size: 90px;
+    transition: opacity 0.5s ease-in-out; // Fade animation for text
+     @media (max-width: "768px") {
+    font-size: 40px;
+    margin: -50px 0 0 20px;
+  }
+    span {
+      color: #f42a41;
+    }
+
+    &.fade-in {
+      opacity: 1;
+    }
+
+    &.fade-out {
+      opacity: 0;
+    }
+  }
+
+  .see-doctors {
+    width: 200px;
+    padding: 10px 0;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 700;
+    margin-left: 90px;
+    margin-top: -30px;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.8s;
+    border: 2px solid #f42a41;
+    background: #f42a41;
+    color: white;
+    position: absolute; // Keep button fixed during transitions
+    bottom: 370px; // Adjust as needed
+    left: 0px;
+     @media (max-width: "768px") {
+    bottom: 200px;
+  }
+
+    &:hover {
+      background: none;
+      border: 2px solid white;
+    }
+
+    &:active {
+      background: #f42a41;
+    }
+  }
+}
+.locating-div {
+  display: flex;
+  margin: 80px 0;
+  padding: 40px 50px; // Added padding for breathing space
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.7)
+  ); // Subtle gradient overlay
+  border-radius: 20px; // Soft rounded corners
+  box-shadow: 0 10px 30px rgba(0, 106, 78, 0.1); // Green-tinted shadow
+  overflow: hidden; // Ensures rounded corners clip content
+ @media (max-width: "768px") {
+    margin: 30px 0;
+    padding: 10px 5px;
+  }
+  .left {
+    width: 35%;
+    display: flex;
+    align-items: center; // Centers the map vertically
+    img {
+      width: 90%; // Slightly smaller to avoid edge crowding
+      float: right;
+      border-radius: 15px; // Rounded map edges
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); // Depth effect
+      transition: transform 0.3s ease; // Hover animation
+      &:hover {
+        transform: scale(1.02); // Gentle zoom on hover
+      }
+    }
+  }
+
+  .right {
+    width: 65%;
+    padding-right: 40px; // Prevents text from touching the edge
+    h1 {
+      margin: 10px 0;
+      line-height: 1.2; // Improves readability
+    }
+    .first-child {
+      font-family: "Molle", cursive;
+      font-weight: 800;
+      font-style: italic;
+      font-size: 90px;
+      color: #006a4e;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); // Subtle text depth
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 100px;
+        height: 4px;
+        background: #f42a41; // Red accent underline
+        border-radius: 2px;
+      }
+    }
+    .second-child {
+      font-weight: 700;
+      color: #f42a41;
+      font-size: 60px; // Smaller than "Locate The Best Doctors" for hierarchy
+      margin-top: 20px;
+      letter-spacing: 1px; // Improves elegance
+    }
+  }
+
+  // Responsive tweaks for smaller screens
+  @media (max-width: 768px) {
+    flex-direction: column;
+    .left,
+    .right {
+      width: 100%;
+      padding: 20px;
+    }
+    .first-child {
+      font-size: 30px !important; // Smaller on mobile
+    }
+    .second-child {
+      font-size: 35px !important;
+    }
+  }
+}

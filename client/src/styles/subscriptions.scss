@@ -1,0 +1,210 @@
+.subscriptions-main-container {
+  width: 100%;
+  display: flex;
+  margin: 30px 0;
+  .subscriptions-container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    .menu-side {
+      width: 20%;
+    }
+    .content-side {
+      width: 79%;
+      margin-left: 1%;
+      background: white;
+      border-radius: 10px;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      padding: 30px;
+      min-height: 320px;
+      h2 {
+        margin-top: 40px;
+        font-size: 28px;
+      }
+      .show-list-of-doctors {
+        width: 100%;
+        overflow-x: auto;
+        margin: 2rem 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        background: white;
+
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          min-width: 600px; // Ensures table doesn't get too narrow on mobile
+
+          thead {
+            background-color: #4a6fa5;
+            color: white;
+
+            th {
+              padding: 1rem;
+              text-align: left;
+              font-weight: 600;
+
+              td {
+                padding: 0.75rem 1rem;
+                font-size: 0.9rem;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+              }
+            }
+          }
+
+          tbody {
+            .loading-row {
+              td {
+                padding: 1rem !important;
+                height: 56px; // Match your regular row height
+              }
+
+              .loading-placeholder {
+                display: inline-block;
+                height: 16px;
+                width: 80%;
+                background: linear-gradient(
+                  90deg,
+                  #f0f0f0 25%,
+                  #e0e0e0 50%,
+                  #f0f0f0 75%
+                );
+                background-size: 200% 100%;
+                border-radius: 4px;
+                animation: loadingShimmer 1.5s infinite linear;
+
+                // Randomize widths for more natural look
+                &:nth-child(1) {
+                  width: 70%;
+                }
+                &:nth-child(2) {
+                  width: 90%;
+                }
+                &:nth-child(3) {
+                  width: 50%;
+                }
+                &:nth-child(4) {
+                  width: 60%;
+                }
+                &:nth-child(5) {
+                  width: 80%;
+                }
+              }
+            }
+
+            @keyframes loadingShimmer {
+              0% {
+                background-position: 200% 0;
+              }
+              100% {
+                background-position: -200% 0;
+              }
+            }
+
+            // Responsive adjustments for loading rows
+            @media (max-width: 768px) {
+              .loading-row {
+                td {
+                  height: auto;
+                  padding: 0.5rem !important;
+
+                  .loading-placeholder {
+                    width: 100% !important;
+                    height: 14px;
+                  }
+                }
+              }
+            }
+            tr {
+              border-bottom: 1px solid #e0e0e0;
+              transition: background-color 0.2s;
+              cursor: pointer;
+              &:hover {
+                background-color: #f8f9fa;
+              }
+
+              &:last-child {
+                border-bottom: none;
+              }
+
+              td {
+                padding: 1rem;
+                color: #333;
+
+                // Status column styling
+                &:nth-child(3) {
+                  font-weight: 500;
+
+                  // Active status
+                  &[data-active="true"] {
+                    color: #28a745;
+                    &::before {
+                      content: "✓ Active";
+                    }
+                  }
+
+                  // Inactive status
+                  &[data-active="false"] {
+                    color: #dc3545;
+                    &::before {
+                      content: "✗ Inactive";
+                    }
+                  }
+                }
+
+                // Payment status column
+                &:nth-child(4) {
+                  font-style: italic;
+                  color: #6c757d;
+                }
+
+                // Date column
+                &:nth-child(5) {
+                  font-family: monospace;
+                  font-size: 0.9rem;
+                }
+              }
+            }
+          }
+        }
+
+        // Responsive adjustments
+        @media (max-width: 768px) {
+          table {
+            thead {
+              display: none; // Hide headers on mobile
+            }
+
+            tbody {
+              tr {
+                display: block;
+                margin-bottom: 1rem;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                padding: 0.5rem;
+
+                td {
+                  display: flex;
+                  justify-content: space-between;
+                  padding: 0.5rem;
+                  border-bottom: 1px solid #eee;
+
+                  &:last-child {
+                    border-bottom: none;
+                  }
+
+                  &::before {
+                    content: attr(data-label);
+                    font-weight: bold;
+                    margin-right: 1rem;
+                    color: #4a6fa5;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

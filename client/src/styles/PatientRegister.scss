@@ -1,0 +1,450 @@
+.pregister-container {
+  width: 100%;
+  display: flex;
+  height: 780px;
+  @media (max-width: 768px) {
+    height: auto;
+    margin-top: 20px;
+  }
+  .pregister-fullbox {
+    background-color: white;
+    width: 60%;
+    height: 90%;
+    margin: auto;
+    display: flex;
+    border-radius: 40px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    @media (max-width: 768px) {
+      display: block;
+      width: 99%;
+    }
+    .image-container-box {
+      width: 50%;
+      overflow: hidden;
+      border-radius: 40px 0 0 40px ;
+      @media (max-width: 768px) {
+        border-radius: 40px 40px 0 0;
+        width: 100%;
+        height: 200px;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        @media (max-width: 768px) {
+          height: auto;
+        }
+      }
+    }
+    .pregister-form-container,
+    .other-element-box {
+      box-sizing: border-box;
+    }
+    .other-element-box {
+      width: 50%;
+      padding: 40px;
+      @media (max-width: 768px) {
+        width: 100%;
+        padding: 30px;
+      }
+      .having-or-not-patientId {
+        display: flex;
+        border: 1px solid #f42a41;
+        border-radius: 20px;
+        margin: 20px 0;
+        cursor: pointer;
+        span {
+          text-align: center;
+          display: block;
+          font-size: 14px;
+        }
+        .having-pid {
+          width: 50%;
+
+          padding: 8px 10px;
+          border-radius: 20px;
+        }
+        .not-having-pid {
+          border-radius: 20px;
+          width: 50%;
+          padding: 8px 10px;
+        }
+      }
+      h1 {
+        margin: 0;
+        font-size: 40px;
+        text-align: center;
+      }
+      .new-user-created {
+        .success-icon {
+          margin: 0;
+          text-align: center;
+          svg {
+            font-size: 50px;
+            color: green;
+            margin: 0;
+          }
+        }
+        h3 {
+          margin: 0;
+          text-align: center;
+        }
+        p {
+          margin: 0;
+          text-align: center;
+        }
+        .detailsofcredintials {
+          margin: 30px 0;
+          h4 {
+            margin: 3px 0;
+          }
+          .patient-id {
+            font-size: 20px;
+            span {
+              color: rgb(120, 180, 0);
+            }
+            label {
+              svg {
+                color: #5c5c5c;
+                font-size: 16px;
+                cursor: pointer;
+                &:active {
+                  color: rgb(249, 52, 52);
+                }
+              }
+            }
+          }
+        }
+      }
+      .not-having-pid-form-container {
+        width: 100%;
+        margin: 0px auto;
+        background-color: #ffffff;
+        border-radius: 12px;
+        font-family: "Fira Sans", sans-serif;
+        display: flex;
+        flex-direction: column;
+        @media (max-width: 768px) {
+          width: 100%;
+        }
+        .email-container {
+          display: flex;
+          flex-direction: column;
+          margin-top: 10px;
+          label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #333333;
+            margin-top: 20px;
+          }
+
+          input {
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: "Fira Sans", sans-serif;
+            transition: border 0.3s ease;
+            &:focus {
+              border-color: #006a4e;
+              outline: none;
+              box-shadow: 0 0 5px rgba(0, 106, 78, 0.3);
+            }
+          }
+          .danger {
+            border: 1px solid red;
+            &:focus {
+              border-color: red;
+            }
+          }
+        }
+        .otp-container {
+          display: flex;
+          flex-direction: column;
+          div {
+            p {
+              margin: 0;
+              font-size: 13px;
+            }
+            span {
+              font-size: 13px;
+              color: blue;
+              text-decoration: underline;
+            }
+          }
+          label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #333333;
+            margin-top: 20px;
+          }
+
+          input {
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: "Fira Sans", sans-serif;
+            transition: border 0.3s ease;
+            &:focus {
+              border-color: #006a4e;
+              outline: none;
+              box-shadow: 0 0 5px rgba(0, 106, 78, 0.3);
+            }
+          }
+          .danger {
+            border: 1px solid red;
+            &:focus {
+              border-color: red;
+            }
+          }
+        }
+        .availability {
+          margin: 0;
+          font-size: 12px;
+          margin-left: 5px;
+        }
+        .danger {
+          border: 1px solid red;
+          &:focus {
+            border-color: red;
+          }
+        }
+        label {
+          font-size: 14px;
+          font-weight: 600;
+          color: #333333;
+          margin-top: 20px;
+        }
+
+        input {
+          padding: 12px 15px;
+          border: 1px solid #ccc;
+          border-radius: 8px;
+          font-size: 14px;
+          font-family: "Fira Sans", sans-serif;
+          transition: border 0.3s ease;
+          &:focus {
+            border-color: #006a4e;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 106, 78, 0.3);
+          }
+        }
+        a {
+          margin: 10px 0;
+          font-style: italic;
+          font-size: 15px;
+          font-weight: 400;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        button {
+          padding: 12px;
+          background-color: #006a4e;
+          color: #ffffff;
+          font-size: 16px;
+          font-weight: 600;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          font-family: "Fira Sans", sans-serif;
+          transition: background-color 0.3s ease;
+          margin-top: 20px;
+          &:hover {
+            background-color: #045842;
+          }
+          &:disabled {
+            background-color: #04584299;
+            cursor: not-allowed;
+          }
+        }
+      }
+      .having-pid-form-container {
+        width: 100%;
+        margin: 0px auto;
+        background-color: #ffffff;
+        border-radius: 12px;
+        font-family: "Fira Sans", sans-serif;
+        display: flex;
+        flex-direction: column;
+        @media (max-width: 768px) {
+          width: 100%;
+        }
+        .patientIdContainer {
+          display: flex;
+          flex-direction: column;
+          label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #333333;
+            margin-top: 1px;
+          }
+
+          input {
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: "Fira Sans", sans-serif;
+            transition: border 0.3s ease;
+            margin-bottom: 1px;
+            &:focus {
+              border-color: #006a4e;
+              outline: none;
+              box-shadow: 0 0 5px rgba(0, 106, 78, 0.3);
+            }
+          }
+          .danger {
+            border: 1px solid red;
+            &:focus {
+              border-color: red;
+            }
+          }
+        }
+        .email-container {
+          display: flex;
+          flex-direction: column;
+          label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #333333;
+            margin-top: 3px;
+          }
+
+          input {
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: "Fira Sans", sans-serif;
+            transition: border 0.3s ease;
+            &:focus {
+              border-color: #006a4e;
+              outline: none;
+              box-shadow: 0 0 5px rgba(0, 106, 78, 0.3);
+            }
+          }
+          .danger {
+            border: 1px solid red;
+            &:focus {
+              border-color: red;
+            }
+          }
+        }
+        .otp-container {
+          display: flex;
+          flex-direction: column;
+          div {
+            p {
+              margin: 0;
+              font-size: 13px;
+            }
+            span {
+              font-size: 13px;
+              color: blue;
+              text-decoration: underline;
+            }
+          }
+          label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #333333;
+            margin-top: 5px;
+          }
+
+          input {
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: "Fira Sans", sans-serif;
+            transition: border 0.3s ease;
+            &:focus {
+              border-color: #006a4e;
+              outline: none;
+              box-shadow: 0 0 5px rgba(0, 106, 78, 0.3);
+            }
+          }
+          .danger {
+            border: 1px solid red;
+            &:focus {
+              border-color: red;
+            }
+          }
+        }
+        .availability {
+          margin: 0;
+          font-size: 12px;
+          margin-left: 5px;
+        }
+        .danger {
+          border: 1px solid red;
+          &:focus {
+            border-color: red;
+          }
+        }
+        label {
+          font-size: 14px;
+          font-weight: 600;
+          color: #333333;
+          margin-top: 5px;
+        }
+
+        input {
+          padding: 12px 15px;
+          border: 1px solid #ccc;
+          border-radius: 8px;
+          font-size: 14px;
+          font-family: "Fira Sans", sans-serif;
+          transition: border 0.3s ease;
+          &:focus {
+            border-color: #006a4e;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 106, 78, 0.3);
+          }
+        }
+        a {
+          margin: 10px 0;
+          font-style: italic;
+          font-size: 15px;
+          font-weight: 400;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        button {
+          padding: 12px;
+          background-color: #006a4e;
+          color: #ffffff;
+          font-size: 16px;
+          font-weight: 600;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          font-family: "Fira Sans", sans-serif;
+          transition: background-color 0.3s ease;
+          margin-top: 20px;
+          &:hover {
+            background-color: #045842;
+          }
+          &:disabled {
+            background-color: #04584299;
+            cursor: not-allowed;
+          }
+        }
+      }
+      .other-register-holder {
+        padding: 0 10px;
+        a {
+          font-style: italic;
+          font-weight: 500;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
